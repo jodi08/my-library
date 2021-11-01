@@ -1,15 +1,21 @@
 import React from 'react'
+import { FaEdit, FaTrash } from 'react-icons/fa'
 
 
-function List() {
+
+function Library({items}) {
+
   return (
     <div>
-      <ul>
-        <li></li>
-      </ul>
+      {items.map((item) => {
+        const {id, title, author, genre} = item
+        return <article key={id}>
+            <p className={title}>{title} - {author} - {genre}</p>
+        </article>
+      })}
       
     </div>
   )
 }
 
-export default List
+export default Library
